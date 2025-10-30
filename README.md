@@ -10,7 +10,7 @@ The solution was benchmarked against a provided DuckDB baseline and achieved a *
 - **Prepare phase**: Transform, index, and pre-aggregate the raw data
 - **Run phase**: Intelligent query planning. Generating correct results as quickly as possible using your optimized design - as long as it all runs self-contained (without outbound network calls)
 
-However, it should be noted that it was not run on the judges queries so a more broader category of queries would be needed to benchmarked against to test this solution for generalization.
+However, it should be noted that it was not run on the judges queries so a broader category of queries would need to be benchmarked against to test this solution for generalization. This could be done with more generalized materialized views with better coverage than the current views targeted specifically towards inputs.py or a cost-based approach with statistics collected during prepare phase. Regardless of the DuckDB initial optimizations, fallback to full table scans from assembler.py's base query plan should be avoided entirely.
 
 **Challenge Details:** The full challenge details can be found at [https://tinyurl.com/applovin-query-planner](https://tinyurl.com/applovin-query-planner)
 
